@@ -1,0 +1,20 @@
+.technology-description
+{
+    gap: 1em;
+    margin: 0 0 2em 0;
+
+    svg
+    {
+        font-size: 31px;
+    }
+
+    .tech-left
+    {
+        flex: 0 0 32px;
+    }
+
+    .tech-right
+    {
+        flex: 1;
+    }
+}
