@@ -32,3 +32,19 @@
     background-color: Color.$color5;
     transition: background-color 0.25s, color 0.25s, border-color 0.25s;
 }
+
+.icon-link.purple
+{
+    border: 1px solid Color.$color6;
+    color: Color.$color6;
+    background-color: transparent;
+    transition: background-color 0.25s, color 0.25s, border-color 0.25s;
+}
+
+.icon-link.purple:hover
+{
+    border: 1px solid Color.$color6;
+    color: Color.$color5;
+    background-color: Color.$color6;
+    transition: background-color 0.25s, color 0.25s, border-color 0.25s;
+}
