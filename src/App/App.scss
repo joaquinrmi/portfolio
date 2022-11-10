@@ -1,5 +1,386 @@
+@use "../color.scss" as Color;
+
 body
 {
     margin: 0;
     font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}
+
+.black
+{
+    font-weight: 500;
+}
+
+.main-title
+{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 100vh;
+    padding: 3em;
+    box-sizing: border-box;
+    background-color: Color.$color1;
+
+    nav
+    {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+
+        ul
+        {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            gap: 2em;
+            flex: 1;
+            max-width: 1280px;
+            list-style: none;
+            margin: 0;
+            padding: 0 2em;
+            box-sizing: border-box;
+
+            li
+            {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+            }
+
+            a
+            {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                padding: 1em 0;
+                font-family: 'Roboto Mono', monospace;
+                font-size: 17px;
+                text-decoration: none;
+                color: Color.$color2;
+
+                .colorbar
+                {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 0;
+                    height: 4px;
+                    background-color: Color.$color5;
+                    border-radius: 9999px;
+                    transition: width 0.5s ease;
+                }
+            }
+
+            a:hover
+            {
+                .colorbar
+                {
+                    width: 100%;
+                    transition: width 0.5s ease;
+                }
+            }
+        }
+    }
+
+    .text-wrapper
+    {
+        display: flex;
+        flex-direction: column;
+
+        .external-links
+        {
+            display: flex;
+            flex-direction: row;
+            gap: 1em;
+            margin-top: 2em;
+        }
+    }
+
+    .title-greatings
+    {
+        font-family: 'Roboto Mono', monospace;
+        font-size: 17px;
+        color: Color.$color4;
+    }
+
+    h1
+    {
+        margin: 0;
+        font-family: 'Roboto', sans-serif;
+        font-size: 85px;
+        font-weight: 500;
+        color: Color.$color2;
+    }
+
+    h2
+    {
+        margin: 1em 0 0 0;
+        font-family: 'Roboto', sans-serif;
+        font-size: 25px;
+        font-weight: 300;
+        color: Color.$color3;
+    }
+}
+
+.technologies
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 3em;
+    padding: 6em 2em 4em 2em;
+    box-sizing: border-box;
+    background-color: Color.$color5;
+
+    .text-wrapper
+    {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        max-width: 892px;
+
+        h2
+        {
+            margin: 0 0 2em 0;
+            font-size: 37px;
+            font-weight: 300;
+            color: Color.$color6;
+        }
+
+        h3
+        {
+            margin: 0 0 2em;
+            font-size: 25px;
+            font-weight: 300;
+            color: Color.$color6;
+        }
+
+        h4
+        {
+            margin: 0;
+            font-size: 19px;
+            font-weight: 500;
+            font-family: 'Roboto Mono', monospace;
+            color: Color.$color6;
+        }
+
+        p
+        {
+            font-size: 15px;
+            font-weight: 300;
+            color: Color.$color7;
+        }
+
+        svg
+        {
+            color: Color.$color6;
+        }
+
+        & > .column
+        {
+            gap: 4em;
+        }
+    }
+}
+
+.projects
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 3em;
+    padding: 6em 2em;
+    box-sizing: border-box;
+    background-color: Color.$color1;
+
+    .text-wrapper
+    {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        max-width: 892px;
+
+        h2
+        {
+            margin: 0 0 2em 0;
+            font-size: 37px;
+            font-weight: 300;
+            color: Color.$color2;
+        }
+
+        h3
+        {
+            margin: 0 0 2em;
+            font-size: 25px;
+            font-weight: 300;
+            color: Color.$color2;
+        }
+
+        .projects-container
+        {
+            display: flex;
+            flex-direction: column;
+            gap: 4em;
+            width: 100%;
+        }
+    }
+}
+
+.contact
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 3em;
+    padding: 6em 2em;
+    box-sizing: border-box;
+    background-color: Color.$color5;
+
+    .text-wrapper
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex: 1;
+        gap: 2em;
+        max-width: 892px;
+        text-align: center;
+
+        h2
+        {
+            margin: 0;
+            font-size: 37px;
+            font-weight: 300;
+            color: Color.$color6;
+        }
+
+        p
+        {
+            margin: 0;
+            font-size: 19px;
+            color: Color.$color6;
+        }
+
+        .external-links
+        {
+            display: flex;
+            flex-direction: row;
+            gap: 1em;
+            margin-bottom: 6em;
+        }
+
+        .fontawesome-link
+        {
+            font-weight: 500;
+            text-decoration: none;
+            color: Color.$color6;
+        }
+
+        .fontawesome-link:hover
+        {
+            text-decoration: underline;
+        }
+    }
+}
+
+.column
+{
+    display: flex;
+    flex-direction: row;
+
+    .row
+    {
+        flex: 1;
+    }
+}
+
+.full
+{
+    width: 100%;
+}
+
+::-webkit-scrollbar
+{
+    width: 8px;
+}
+
+::-webkit-scrollbar-track
+{
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb
+{
+    border-radius: 1000px;
+    background: #9FA5A5;
+}
+
+@media (max-height: 500px)
+{
+    .main-title
+    {
+        min-height: 500px;
+    }
+}
+
+@media (max-width: 699px)
+{
+    .technologies
+    {
+        .text-wrapper
+        {
+            max-width: 414px;
+
+            & > .column
+            {
+                flex-direction: column;
+                gap: 2em;
+
+                & > .row
+                {
+                    flex: 0;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 711px)
+{
+    .main-title
+    {
+        min-height: 600px;
+        
+        .text-wrapper
+        {
+            max-width: 303px;
+        }
+    }
+}
+
+@media (max-width: 368px)
+{
+    .main-title
+    {
+        padding: 1em;
+    }
+}
+
+@media (max-width: 415px)
+{
+    .main-title
+    {
+        nav
+        {
+            display: none;
+        }
+    }
 }
