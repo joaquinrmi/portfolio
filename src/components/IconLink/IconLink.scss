@@ -1,0 +1,34 @@
+@use "../../color.scss" as Color;
+
+.icon-link
+{
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 51px;
+    height: 51px;
+    border-radius: 9999px;
+    overflow: hidden;
+
+    svg
+    {
+        font-size: 26px;
+    }
+}
+
+.icon-link.white
+{
+    border: 1px solid Color.$color2;
+    color: Color.$color2;
+    background-color: Color.$color1;
+    transition: background-color 0.25s, color 0.25s, border-color 0.25s;
+}
+
+.icon-link.white:hover
+{
+    border: 1px solid Color.$color5;
+    color: Color.$color1;
+    background-color: Color.$color5;
+    transition: background-color 0.25s, color 0.25s, border-color 0.25s;
+}
