@@ -2,7 +2,7 @@ import "./Project.scss";
 import React from "react";
 import TechLabel, { Technology } from "../TechLabel";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
+import { faArrowUpRightFromSquare, faDisplay, faGlobe } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
 export type Props = {
@@ -16,18 +16,33 @@ export type Props = {
 
 const Project: React.FunctionComponent<Props> = (props) =>
 {
-    return <div className="project">
-        <div className="cover-container">
+    return <div
+        className="project"
+        onLoad={(ev) =>
+        {
+            const target = ev.currentTarget as HTMLDivElement;
+            if(!target) return;
+
+            const container = target.querySelector(".cover-container") as HTMLDivElement;
+            if(!container) return;
+
+            container.classList.remove("error");
+        }}
+    >
+        <h3 className="project-title">{props.title}</h3>
+
+        <div className="cover-container error">
             <div>
-                <img src={props.cover} alt={`Portada del proyecto '${props.title}'.`} />
+                <img
+                    src={props.cover}
+                    alt={`Portada del proyecto '${props.title}'.`}
+                />
             </div>
 
             <a href={props.repository} target="_blank">
                 <FontAwesomeIcon icon={faGithub} />
             </a>
         </div>
-
-        <h3 className="project-title">{props.title}</h3>
 
         <div className="tech-labels-container">
             {props.technologies.map((tech) =>
@@ -37,9 +52,25 @@ const Project: React.FunctionComponent<Props> = (props) =>
         </div>
 
         <div className="description-container">
-            <a href={props.deploy} className="deploy" target="_blank">
-                Ver aplicación desplegada<FontAwesomeIcon icon={faArrowUpRightFromSquare} />
-            </a>
+            <div className="external">
+                <div className="icon-container">
+                    <FontAwesomeIcon icon={faDisplay} />
+                </div>
+
+                <a href={props.deploy} className="deploy" target="_blank">
+                    Ver aplicación desplegada<FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+                </a>
+            </div>
+
+            <div className="external">
+                <div className="icon-container">
+                    <FontAwesomeIcon icon={faGithub} />
+                </div>
+
+                <a href={props.repository} className="deploy" target="_blank">
+                    Visitar repositorio<FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+                </a>
+            </div>
 
             <span className="description">
                 {props.description}

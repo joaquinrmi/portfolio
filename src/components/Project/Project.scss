@@ -11,9 +11,12 @@
     .cover-container
     {
         position: relative;
-        padding-bottom: 62.5%;
+        padding-bottom: calc(62.5% - 2px);
         margin: 0 0 1em 0;
-        background-color: Color.$color5;
+        border-radius: 6px;
+        border: 1px solid Color.$color8;
+        box-sizing: border-box;
+        overflow: hidden;
 
         div
         {
@@ -57,6 +60,11 @@
         }
     }
 
+    .cover-container.error
+    {
+        background-color: Color.$color5;
+    }
+
     .project-title
     {
         margin: 0 0 0.5em 0 !important;
@@ -77,6 +85,24 @@
         flex-direction: column;
         gap: 1em;
         font-size: 17px;
+
+        .external
+        {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            .icon-container
+            {
+                width: 40px;
+
+                svg
+                {
+                    font-size: 22px;
+                    color: Color.$color4;
+                }
+            }
+        }
 
         a
         {
